@@ -30,3 +30,11 @@ buz.log2('John');
 
 var baz = require('./baz').Baz;
 baz.log();
+
+var Doo = require('./doo');
+var doo = new Doo();
+doo.log();
+
+var Qux = require('./qux').Qux;
+var qux = new Qux();
+qux.log();
