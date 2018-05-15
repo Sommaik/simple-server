@@ -1,0 +1,15 @@
+version: '3'
+services:
+# My sample server
+  my_sample_server:
+    image: sample-server:2.1
+    ports: 
+      - 8000:8000
+# Comment
+# Comment 2
+  my_web_server:
+    image: nginx:latest
+    volumes: 
+      - /Users/sommaik/Workspace/train/wacoal/sample-server/web:/usr/share/nginx/html
+    ports:
+      - 8080:80
