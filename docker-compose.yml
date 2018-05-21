@@ -1,15 +1,26 @@
 version: '3'
 services:
 # My sample server
-  my_sample_server:
-    image: sample-server:2.1
-    ports: 
-      - 8000:8000
+#  my_sample_server:
+#    image: sample-server:2.1
+#    ports: 
+#      - 8000:8000
 # Comment
 # Comment 2
-  my_web_server:
-    image: nginx:latest
-    volumes: 
-      - /Users/sommaik/Workspace/train/wacoal/sample-server/web:/usr/share/nginx/html
-    ports:
-      - 8080:80
+#  my_web_server:
+#    image: nginx:latest
+#    volumes: 
+#      - /Users/sommaik/Workspace/train/wacoal/sample-server/web:/usr/share/nginx/html
+#    ports:
+#      - 8080:80
+  my-db-server:
+    image: mysql:5.5.60
+    ports: 
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: sommai_k
+      MYSQL_DATABASE: issue_db
+      MYSQL_USER: issue
+      MYSQL_PASSWORD: issue
+    volumes:
+      - /Users/sommaik/Workspace/train/wacoal/sample-server/mysql:/var/lib/mysql 

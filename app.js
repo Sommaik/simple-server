@@ -4,6 +4,7 @@ const app = express();
 const server = require('http').Server(app);
 server.listen(8000);
 const birds = require('./birds');
+const user = require('./controller/user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -14,6 +15,7 @@ app.use(express.static('web'));
 console.log("server running port 8000");
 
 app.use("/bbb", birds);
+app.use("/user", user);
 
 app.get('/he*', function (req, res, next) {
     console.log("Hello from all logs");
